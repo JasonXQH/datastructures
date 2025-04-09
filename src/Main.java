@@ -1,5 +1,6 @@
 import deadlock.DeadLockDemo;
 import quicksort.QuickSort;
+import segmenttree.ArraySegmentTree;
 
 /**
  * @author: XuQihang
@@ -8,15 +9,12 @@ import quicksort.QuickSort;
  */
 public class Main {
     public static void main(String[] args) {
-//        DeadLockDemo deadLockDemo = new DeadLockDemo();
-//        Thread t1 = deadLockDemo.getT1();
-//        Thread t2 = deadLockDemo.getT2();
-//        t1.start();
-//        t2.start();
-        int[] nums = new int[]{34,2,4,56,31,9221,1,0};
-        QuickSort.quickSort(nums, 0, nums.length - 1);
-        for(int i:nums){
-            System.out.println(i);
-        }
+         int[] arr = {1, 3, 5, 7, 9};
+        // 示例，创建一棵求和线段树
+        ArraySegmentTree st = new ArraySegmentTree(arr, (a, b) -> a + b);
+
+        System.out.println(st.query(1, 3)); // 3 + 5 + 7 = 15
+        st.update(2, 10);
+        System.out.println(st.query(1, 3)); // 3 + 10 + 7 = 20
     }
 }
