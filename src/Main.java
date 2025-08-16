@@ -1,6 +1,6 @@
-import deadlock.DeadLockDemo;
-import quicksort.QuickSort;
-import segmenttree.ArraySegmentTree;
+
+import java.util.PriorityQueue;
+import java.util.Scanner;
 
 /**
  * @author: XuQihang
@@ -9,12 +9,8 @@ import segmenttree.ArraySegmentTree;
  */
 public class Main {
     public static void main(String[] args) {
-         int[] arr = {1, 3, 5, 7, 9};
-        // 示例，创建一棵求和线段树
-        ArraySegmentTree st = new ArraySegmentTree(arr, (a, b) -> a + b);
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
 
-        System.out.println(st.query(1, 3)); // 3 + 5 + 7 = 15
-        st.update(2, 10);
-        System.out.println(st.query(1, 3)); // 3 + 10 + 7 = 20
     }
 }
